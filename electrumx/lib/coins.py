@@ -428,6 +428,16 @@ class BitcoinCash(BitcoinMixin, Coin):
         'electrum.imaginary.cash s t',
     ]
 
+class BitcoinCore(BitcoinMixin, Coin):
+    NAME = "BitcoinCore"
+    SHORTNAME = "BTCC"
+    TX_COUNT = 246362688
+    TX_COUNT_HEIGHT = 588090
+    TX_PER_BLOCK = 50
+    PEERS = [
+        'electrumx.thebitcoincore.org s t',
+    ]
+
 
 class BitcoinSegwit(BitcoinMixin, Coin):
     NAME = "BitcoinSegwit"
@@ -613,6 +623,20 @@ class BitcoinCashRegtest(BitcoinCashTestnet):
     TX_COUNT = 1
     TX_COUNT_HEIGHT = 1
 
+class BitcoinCoreTestnet(BitcoinTestnetMixin, Coin):
+    '''Bitcoin Testnet for BitcoinCored daemons.'''
+    NAME = "BitcoinCore"
+    PEERS = [
+        'electrumx-testnet.thebitcoincore.org s t',
+    ]
+
+class BitcoinCoreRegtest(BitcoinCoreTestnet):
+    NET = "regtest"
+    GENESIS_HASH = ('0f9188f13cb7b2c71f2a335e3a4fc328'
+                    'bf5beb436012afca590b1a11466e2206')
+    PEERS = []
+    TX_COUNT = 1
+    TX_COUNT_HEIGHT = 1
 
 class BitcoinSegwitTestnet(BitcoinTestnetMixin, Coin):
     '''Bitcoin Testnet for Core bitcoind >= 0.13.1.'''
