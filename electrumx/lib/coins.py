@@ -626,6 +626,8 @@ class BitcoinCashRegtest(BitcoinCashTestnet):
 class BitcoinCoreTestnet(BitcoinTestnetMixin, Coin):
     '''Bitcoin Testnet for BitcoinCored daemons.'''
     NAME = "BitcoinCore"
+    GENESIS_HASH = ('0273ed223240099a339d351d46054156'
+                    'fb6f3855c5db1c00c0275c9b6f1d07de')
     PEERS = [
         'electrumx-testnet.thebitcoincore.org s t',
     ]
